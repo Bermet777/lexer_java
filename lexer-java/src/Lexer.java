@@ -72,8 +72,8 @@ public class Lexer implements Iterable<Lexer.Token>{
               if (isDigit(ch)) {
                 tokens.add(new Token(TokenType.NUMBER, readNumber()));
               } else if (isAlpha(ch)) {
-                String identifier = readIdentifier();
-                tokens.add(new Token(deriveTokenType(identifier), identifier));
+                String word = readWord();
+                tokens.add(new Token(deriveTokenType(word), word));
               }   else {
                 throw new LexerException("Unsupported character: " + ch);
               }         
@@ -83,8 +83,8 @@ public class Lexer implements Iterable<Lexer.Token>{
 
   }
 
-  private TokenType deriveTokenType(String identifier) {
-    switch (identifier) {
+  private TokenType deriveTokenType(String word) {
+    switch (word) {
       case "if":
         return TokenType.IF;
       case "else":
@@ -97,7 +97,7 @@ public class Lexer implements Iterable<Lexer.Token>{
     }
   }
 
-  private String readIdentifier() {
+  private String readWord() {
     StringBuilder builder = new StringBuilder();
     while (current < input.length() && isAlphaNumeric(input.charAt(current))) {
       builder.append(input.charAt(current));
