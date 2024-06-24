@@ -8,12 +8,9 @@
 
 <statement> ::= <identifier> "=" <expression>
 
-<expression> ::= <identifier> <operator> <expression_part>
-              | <number>
+<expression> ::= <identifier> <operator> <expression_part> |<number>
 
-<expression_part> ::= <identifier>
-                    | <number>
-                    | "(" <expression> ")"
+<expression_part> ::= <identifier> | <number> | "(" <expression> ")"
 
 <print_statement> ::= "print" <identifier>
 
