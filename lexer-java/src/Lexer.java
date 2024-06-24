@@ -51,20 +51,20 @@ public class Lexer implements Iterable<Lexer.Token>{
               current++;
               break;  
         case '(':
-              tokens.add(new Token(TokenType.PARENTHESES, "("));
+              tokens.add(new Token(TokenType.L_PARENTHESES, "("));
               current++;
               break;
 
         case ')':
-              tokens.add(new Token(TokenType.PARENTHESES, ")"));
+              tokens.add(new Token(TokenType.R_PARENTHESES, ")"));
               current++;
               break;  
         case '}':
-              tokens.add(new Token(TokenType.BRACES, "}"));
+              tokens.add(new Token(TokenType.R_BRACES, "}"));
               current++;
               break;
         case '{':
-               tokens.add(new Token(TokenType.BRACES, "{"));
+               tokens.add(new Token(TokenType.L_BRACES, "{"));
                current++;
                break;              
     
@@ -153,7 +153,7 @@ public class Lexer implements Iterable<Lexer.Token>{
   }
 
   enum TokenType {
-      NUMBER, IDENTIFIER, OPERATOR, ASSIGNMENT, VARIABLE, SEPARATOR,PARENTHESES,BRACES,IF,ELSE,PRINT, COMPARISON_OPERATOR
+      NUMBER, IDENTIFIER, OPERATOR, ASSIGNMENT, VARIABLE, SEPARATOR,R_PARENTHESES,L_PARENTHESES,L_BRACES,R_BRACES,IF,ELSE,PRINT, COMPARISON_OPERATOR
   }
 
 }
