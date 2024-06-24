@@ -1,0 +1,33 @@
+<program> ::= <assignment> <conditional> <print_statement>
+
+<conditional> ::= "if" "(" <condition> ")" "{" <statement> "}" "else" "{" <statement> "}"
+
+<assignment> ::= <identifier> "=" <number>
+
+<condition> ::= <identifier> ("<" | ">") <number>
+
+<statement> ::= <identifier> "=" <expression>
+
+<expression> ::= <identifier> <operator> <expression_part>
+              | <number>
+
+<expression_part> ::= <identifier>
+                    | <number>
+                    | "(" <expression> ")"
+
+<print_statement> ::= "print" <identifier>
+
+<identifier> ::= <letter> <alphanumeric>
+
+<operator> ::= "+" | "*" | "-" | "/"
+
+<number> ::= <digit>+ ("." <digit>+)?
+
+<letter> ::= [a-zA-Z]
+
+<digit> ::= [0-9]
+
+<alphanumeric> ::= <letter> | <digit>
+
+
+
