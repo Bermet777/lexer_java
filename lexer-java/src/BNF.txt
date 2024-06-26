@@ -1,3 +1,4 @@
+BNF
 <program> ::= <assignment> <conditional> <print_statement>
 
 <conditional> ::= "if" "(" <condition> ")" "{" <statement> "}" "else" "{" <statement> "}"
